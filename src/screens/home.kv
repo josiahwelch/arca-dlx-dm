@@ -1,0 +1,59 @@
+<HomeScreen>:
+    name:'home'
+    # Toolbar at the top
+    BoxLayout:
+        size_hint_y: 0.1  # Toolbar height (10% of window height)
+        canvas.before:
+            Color:
+                rgba: 0.2, 0.2, 0.2, 1  # Dark gray background
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Button:
+            text: 'File'
+            size_hint_x: 0.2
+            on_press: root.toolbar_button_pressed('File')
+        Button:
+            text: 'Edit'
+            size_hint_x: 0.2
+            on_press: root.toolbar_button_pressed('Edit')
+        Button:
+            text: 'View'
+            size_hint_x: 0.2
+            on_press: root.toolbar_button_pressed('View')
+        Label:
+            text: ''  # Spacer to push buttons to the left
+            size_hint_x: 0.4
+
+    # Main content area
+    Label:
+        text: 'Main Content Area'
+        size_hint_y: 0.9  # Takes up remaining space
+
+<MyApp>:
+    orientation: 'vertical'
+
+    # Toolbar at the top
+    BoxLayout:
+        size_hint_y: 0.1  # Toolbar height (10% of window height)
+        canvas.before:
+            Color:
+                rgba: 0.2, 0.2, 0.2, 1  # Dark gray background
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        Button:
+            text: 'File'
+            size_hint_x: 0.2
+            on_press: root.toolbar_button_pressed('File')
+        Button:
+            text: 'Edit'
+            size_hint_x: 0.2
+            on_press: root.toolbar_button_pressed('Edit')
+        Button:
+            text: 'View'
+            size_hint_x: 0.2
+            on_press: root.toolbar_button_pressed('View')
+        Label:
+            text: ''  # Spacer to push buttons to the left
+            size_hint_x: 0.4
