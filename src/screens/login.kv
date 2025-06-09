@@ -1,0 +1,40 @@
+<LoginScreen>:
+    name: 'login'
+    BoxLayout:
+        id: login_layout
+        orientation: 'vertical'
+        spacing: 10
+        padding: 20
+        canvas.before:
+            Color:
+                rgba: 0.9,0.9,0.9,1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Label:
+            text: 'Login'
+        Image:
+            source: '../assets/main.png'
+            size_hint: 1, 1
+            allow_stretch: False
+            keep_ratio: True
+            #on_touch_down: app.change_image()
+        TextInput:
+            id: username
+            hint_text: 'enter username'
+            background_color: 0, 0.6, 1, 0.5
+            foreground_color: 0, 0, 0, 1
+        TextInput:
+            id: password
+            hint_text: 'enter password'
+            background_color: 0, 0.6, 1, 0.5
+            foreground_color: 0, 0, 0, 1
+            password: True
+            password_mask: '#'
+        Label:
+            id: login_message
+        Button:
+            id: login
+            text: 'Login'
+            on_release: root.login(app)
