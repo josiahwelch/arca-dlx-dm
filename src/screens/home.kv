@@ -1,20 +1,29 @@
 <HomeScreen>:
     name:'home'
-    # Toolbar at the bottom
     BoxLayout:
-        size_hint_y: 0.1  # Toolbar height (10% of window height)
-        canvas.before:
-            Color:
-                rgba: 1, 1, 1, 1  # Dark gray background
-            Rectangle:
-                pos: self.pos
-                size: self.size
-        Button:
-            text: 'M.A.T.'
-            size_hint_x: 0.2
-            on_press: root.toolbar_button_pressed('MAT')
-        Button:
-            text: 'Log Out'
-            size_hint_x: 0.2
-            on_press: root.toolbar_button_pressed('LogOut')
-        Label:
+        orientation: 'vertical'
+
+        #main content
+        BoxLayout:
+            id: main_display
+            orientation: 'horizontal'
+            size_hint_y: 0.9
+
+        # Toolbar at the bottom
+        BoxLayout:
+            size_hint_y: 0.1  # Toolbar height (10% of window height)
+            canvas.before:
+                Color:
+                    rgba: 1, 1, 1, 1  # Dark gray background
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Button:
+                text: 'M.A.T.'
+                size_hint_x: 0.2
+                on_press: root.open_close_mat()
+            Button:
+                text: 'Log Out'
+                size_hint_x: 0.2
+                on_release: root.toolbar_button_pressed('LogOut')
+            Label:
