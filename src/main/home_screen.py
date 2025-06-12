@@ -5,6 +5,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
 from kivy.uix.screenmanager import Screen
 import importlib
+
 class HomeScreen(Screen):
     def __init__(self, app, dlx_desktop, **kwargs):
         super().__init__(**kwargs)
@@ -12,13 +13,10 @@ class HomeScreen(Screen):
         self.dlx_desktop = dlx_desktop
         self.mat_menu = BoxLayout()
         self.reload_mat()
-        self.application_running = False
-
-    def toolbar_button_pressed(self, button_text):
-        print(f"{button_text} button pressed!")
+        self.application_running = False # for running/killing the current application
 
     def run_program(self, app_name, *args):
-        sys.path.append('/dlx/applications')
+        sys.path.append('/dlx/applications') # where the applications are located
         program = importlib.import_module(app_name.replace(' ', '_').lower())
         if self.application_running == True:
             self.application_running = False
