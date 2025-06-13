@@ -41,3 +41,4 @@ class ArcaApp:
         self.application = BoxLayout(orientation=self.orientation, padding=padding)
 
     def add_layer(self, object):
+        self.application.add_widget(object)
